@@ -18,6 +18,7 @@ entity top_level is
 end top_level;
 
 architecture Structural of top_level is
+signal deb_ch_up, deb_ch_dn, deb_duty_up, deb_duty_dn : STD_LOGIC;
   component channel_selector is
     Port (
       clk     : in  STD_LOGIC;
@@ -70,23 +71,43 @@ architecture Structural of top_level is
   signal duty_registers : duty_array := (others => to_unsigned(1000, 32));
   signal current_duty   : UNSIGNED(31 downto 0);
   constant PWM_PERIOD : UNSIGNED(31 downto 0) := to_unsigned(1000, 32); -- 10 µs (místo 20 ms)
-
 begin
-CH_SEL: channel_selector port map (
-    clk => CLK,
-    reset => RESET,
-    btn_up => BTN_CH_UP, -- Pøímé pøipojení tlaèítka
-    btn_dn => BTN_CH_DN,
-    channel => selected_channel
-  );
+  -- Debouncery pro všechna tlaèítka
+  DEB_CH_UP2: entity work.debouncer
+    generic map (CLK_FREQ => 100_000_000, DEBOUNCE_MS => 20)
+    port map (clk => CLK, btn_in => BTN_CH_UP, btn_out => deb_ch_up);
 
-  INT_CTRL: intensity_control port map (
-    clk => CLK,
-    reset => RESET,
-    btn_up => BTN_DUTY_UP, -- Pøímé pøipojení tlaèítka
-    btn_dn => BTN_DUTY_DN,
-    intensity_level => new_intensity
-  );
+  DEB_CH_DN2: entity work.debouncer
+    generic map (CLK_FREQ => 100_000_000, DEBOUNCE_MS => 20)
+    port map (clk => CLK, btn_in => BTN_CH_DN, btn_out => deb_ch_dn);
+
+  DEB_DUTY_UP2: entity work.debouncer
+    generic map (CLK_FREQ => 100_000_000, DEBOUNCE_MS => 20)
+    port map (clk => CLK, btn_in => BTN_DUTY_UP, btn_out => deb_duty_up);
+
+  DEB_DUTY_DN2: entity work.debouncer
+    generic map (CLK_FREQ => 100_000_000, DEBOUNCE_MS => 20)
+    port map (clk => CLK, btn_in => BTN_DUTY_DN, btn_out => deb_duty_dn);
+
+  -- Instance komponent s debounced signály
+  CH_SEL: entity work.channel_selector
+    port map (
+      clk => CLK,
+      reset => RESET,
+      btn_up => deb_ch_up,
+      btn_dn => deb_ch_dn,
+      channel => selected_channel
+    );
+
+  INT_CTRL: entity work.intensity_control
+    port map (
+      clk => CLK,
+      reset => RESET,
+      btn_up => deb_duty_up,
+      btn_dn => deb_duty_dn,
+      intensity_level => new_intensity
+    );
+
 
   
   PWM_GEN: for i in 0 to 7 generate
