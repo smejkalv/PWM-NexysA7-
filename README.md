@@ -41,7 +41,22 @@ For input/output, we utilize four pins from the JA Pmod port on the FPGA. Two pi
 
 ## Software description
 
-Put flowchats/state diagrams of your algorithm(s) and direct links to source/testbench files in `src` and `sim` folders.
+The entire system can be divided into six main functional blocks: bar_graph, channel_selector, debouncer, intensity_controll, pwm_generator, seg7disp. Each block is responsible for a distinct part of the device's functionality.
+
+* debouncer: To ensure stable and noise-free button inputs, this module filters out any signal bouncing from the physical buttons. It is used to stabilize inputs for both the intensity and channel controls.
+
+* channel_selector: This module enables switching between different PWM channels, allowing the user to cycle through and control multiple signals individually. Each channel maintains its own duty cycle setting.
+
+* seg7disp: This module manages the 7-segment display, showing numeric values such as the current PWM channel.
+
+* intensity_control: Connected to the button inputs, this module allows the user to increase or decrease the PWM duty cycle.
+
+* bar_graph: This visual component displays the current duty cycle as a bar graph. It provides a quick and intuitive representation of signal intensity LEDs.
+
+* pwm_generator: This module creates the PWM signals with adjustable duty cycles. It forms the core of the system by generating the output signal that is later visualized and controlled through other components.
+
+
+
 
 ### Component(s) simulations
 
