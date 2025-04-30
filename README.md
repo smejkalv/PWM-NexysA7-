@@ -1,6 +1,6 @@
 # Configurable multi-channel Pulse Width Modulation (PWM) for LED brightness control
 
-### Team members
+## Team members
 
 * Vojtěch Smejkal -  Designed the main top-level architecture and completed the overall project. Implemented the PWM generator and top-level integration.
 * Polák Tomáš - Developed the debouncer, intensity control, and channel selector. Also created the project video.
@@ -8,7 +8,7 @@
 
 * Even though these were our main individual contributions, the entire project was completed as a team effort.
 
-### Abstract
+## Abstract
 
 This project presents a configurable multi-channel Pulse Width Modulation (PWM) system designed for precise LED brightness control. The system allows users to adjust the brightness of multiple LEDs independently by varying duty cycles across several PWM channels. A flexible interface enables easy reconfiguration of parameters such as frequency, duty cycle, and channel count, making the design adaptable to various lighting applications. Emphasis is placed on achieving smooth brightness transitions and minimizing flicker through optimized PWM signal generation. Overall, this configurable PWM solution offers a scalable, customizable method for efficient LED brightness management in diverse environments.
 
@@ -58,7 +58,7 @@ The entire system can be divided into six main functional blocks: bar_graph, cha
 
 
 
-### Component(s) simulations
+## Component(s) simulations
 
 ### simulation of debouncer
 ![simulation of debouncer](imgs/sim_debouncer.png)
@@ -77,7 +77,7 @@ The entire system can be divided into six main functional blocks: bar_graph, cha
 ### simulation of pwm
 ![simulation of pwm](imgs/sim_pwm.png)
 
-### Video
+## Video
 https://github.com/user-attachments/assets/5bef7ae0-4dbe-4ae2-89f9-cc15fe81ab4c
 
 ## References
