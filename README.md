@@ -55,10 +55,10 @@ The entire system can be divided into six main functional blocks: bar_graph, cha
 
 * pwm_generator: This module creates the PWM signals with adjustable duty cycles. It forms the core of the system by generating the output signal that is later visualized and controlled through other components.
 
-Source
+Source: 
 https://github.com/smejkalv/PWM-NexysA7-/tree/main/sources
 
-Testbench
+Testbench: 
 https://github.com/smejkalv/PWM-NexysA7-/tree/main/tb_sources
 
 ## Component(s) simulations
