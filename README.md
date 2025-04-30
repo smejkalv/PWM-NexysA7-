@@ -2,9 +2,11 @@
 
 ### Team members
 
-* Vojtěch Smejkal -
-* Polák Tomáš -
-* Matúš Repáš -
+* Vojtěch Smejkal -  Designed the main top-level architecture and completed the overall project. Implemented the PWM generator and top-level integration.
+* Polák Tomáš - Developed the debouncer, intensity control, and channel selector. Also created the project video.
+* Matúš Repáš - Implemented the bar graph and 7-segment display, designed the top-level schematic, and edited the README file.
+
+* Even though these were our main individual contributions, the entire project was completed as a team effort.
 
 ### Abstract
 
@@ -15,10 +17,12 @@ The FPGA board uses five buttons: BTNR, BTNL, BTND, BTNU, and BTNC. BTNR and BTN
 
 For input/output, we utilize four pins from the JA Pmod port on the FPGA. Two pins are connected to external LEDs, and the remaining two are used for the BAR segment display. This configuration was necessary because the JB Pmod port, which is our primary interface, did not have enough available pins for the BAR segment display.
 
+### Pmod Ports
 ![pmod](imgs/Pmod_pinout.png)
 
 ### Schematic
 ![schema](imgs/schema_toplevel.png)
+
 ## Software description
 
 Put flowchats/state diagrams of your algorithm(s) and direct links to source/testbench files in `src` and `sim` folders.
