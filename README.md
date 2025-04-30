@@ -10,7 +10,7 @@
 
 ### Abstract
 
-This project presents a configurable multi-channel Pulse Width Modulation (PWM) system designed for precise LED brightness control. The system allows users to adjust the brightness of multiple LEDs independently by varying duty cycles across several PWM channels. A flexible interface enables easy reconfiguration of parameters such as frequency, duty cycle, and channel count, making the design adaptable to various lighting applications. Emphasis is placed on achieving smooth brightness transitions and minimizing flicker through optimized PWM signal generation. The project explores both hardware-based and software-based PWM approaches, balancing performance with resource efficiency. Overall, this configurable PWM solution offers a scalable, customizable method for efficient LED brightness management in diverse environments.
+This project presents a configurable multi-channel Pulse Width Modulation (PWM) system designed for precise LED brightness control. The system allows users to adjust the brightness of multiple LEDs independently by varying duty cycles across several PWM channels. A flexible interface enables easy reconfiguration of parameters such as frequency, duty cycle, and channel count, making the design adaptable to various lighting applications. Emphasis is placed on achieving smooth brightness transitions and minimizing flicker through optimized PWM signal generation. Overall, this configurable PWM solution offers a scalable, customizable method for efficient LED brightness management in diverse environments.
 
 The main contributions of the project are:
 
@@ -27,9 +27,6 @@ The main contributions of the project are:
 * Utilization of limited Pmod ports by distributing I/O between external LEDs and a BAR display, demonstrating efficient hardware resource management.
 
 * Complete team collaboration, including system design, coding, simulation, schematic design, README preparation, and video/poster presentation.
-
-
-
 
 ## Hardware description of demo application
 The FPGA board uses five buttons: BTNR, BTNL, BTND, BTNU, and BTNC. BTNR and BTNL control the duty cycle of the PWM signal, while BTND and BTNU are used to switch between different PWM outputs. BTNC serves as the central reset button, which restores the PWM settings to default, setting the duty cycle back to 50%.
@@ -48,7 +45,17 @@ Put flowchats/state diagrams of your algorithm(s) and direct links to source/tes
 
 ### Component(s) simulations
 
-Write descriptive text and put simulation screenshots of components you created during the project.
+![simulation of debouncer](imgs/sim_debouncer.png)
+
+![simulation of channel selector](imgs/sim_channel_selector.png)
+
+
+
+![simulation of intensity controller](imgs/sim_intensity_controller.png)
+
+![simulation of bar graph](imgs/sim_bargraph.png)
+
+![simulation of pwm](imgs/sim_pwm.png)
 
 ## References
 
