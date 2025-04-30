@@ -77,6 +77,9 @@ The entire system can be divided into six main functional blocks: bar_graph, cha
 ### simulation of pwm
 ![simulation of pwm](imgs/sim_pwm.png)
 
+### Video
+https://github.com/user-attachments/assets/5bef7ae0-4dbe-4ae2-89f9-cc15fe81ab4c
+
 ## References
 
 1. https://www.drawio.com/
