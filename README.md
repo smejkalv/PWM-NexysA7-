@@ -45,16 +45,21 @@ Put flowchats/state diagrams of your algorithm(s) and direct links to source/tes
 
 ### Component(s) simulations
 
+### simulation of debouncer
 ![simulation of debouncer](imgs/sim_debouncer.png)
 
+### simulation of channel selector
 ![simulation of channel selector](imgs/sim_channel_selector.png)
 
 
-
+### simulation of intensity controller
 ![simulation of intensity controller](imgs/sim_intensity_controller.png)
 
+### simulation of bar graph
 ![simulation of bar graph](imgs/sim_bargraph.png)
 
+
+### simulation of pwm
 ![simulation of pwm](imgs/sim_pwm.png)
 
 ## References
