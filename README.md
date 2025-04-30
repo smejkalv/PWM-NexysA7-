@@ -15,7 +15,6 @@ The FPGA board uses five buttons: BTNR, BTNL, BTND, BTNU, and BTNC. BTNR and BTN
 For input/output, we utilize four pins from the JA Pmod port on the FPGA. Two pins are connected to external LEDs, and the remaining two are used for the BAR segment display. This configuration was necessary because the JB Pmod port, which is our primary interface, did not have enough available pins for the BAR segment display.
 
 ![pmod](imgs/Pmod_pinout.png)
-Describe your implementation. Put a descriptive top-level schematic of your application.
 ![schema](imgs/schema_toplevel.png)
 ## Software description
 
