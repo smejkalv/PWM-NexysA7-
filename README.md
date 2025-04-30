@@ -45,7 +45,7 @@ The entire system can be divided into six main functional blocks: bar_graph, cha
 
 * debouncer: To ensure stable and noise-free button inputs, this module filters out any signal bouncing from the physical buttons. It is used to stabilize inputs for both the intensity and channel controls.
 
-* channel_selector: This module enables switching between different PWM channels, allowing the user to cycle through and control multiple signals individually. Each channel maintains its own duty cycle setting.
+* channel_selector: This module enables switching between different PWM channels, allowing the user to cycle through and control multiple signals individually.
 
 * seg7disp: This module manages the 7-segment display, showing numeric values such as the current PWM channel.
 
