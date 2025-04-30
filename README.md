@@ -65,4 +65,6 @@ Put flowchats/state diagrams of your algorithm(s) and direct links to source/tes
 ## References
 
 1. https://www.drawio.com/
-2. ...
+2. https://github.com/tomas-fryza/vhdl-labs/tree/master
+3. https://vhdl.lapinoo.net/
+4. https://www.edaplayground.com/
